@@ -10,7 +10,7 @@
  * Rules applied:
  *  - The comparison must be case-insensitive
  *    (e.g. 'A' and 'a' are considered the same)
- *  - Non-alphabetical characters (digits, spaces, symbols, '\n')
+ *  - Non-alphabetical characters (digits, spaces, symbols, \n)
  *    must be ignored
  *  - Functions from <ctype.h> are used to simplify character checks
  *
