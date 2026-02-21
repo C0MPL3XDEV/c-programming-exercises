@@ -31,7 +31,7 @@ int main() {
     // Initialize the array
     int numbers[array_length];
 
-    // Fill the array by the user
+    // Fill the array by the user - Or use srand()
 
     for (int i = 0; i < array_length; i++) {
         printf("Insert number %d: ", i + 1);
