@@ -7,6 +7,7 @@
  *      - grande
  *  - Read N students
  *  - Print the student with max grade
+ *  - Calculate the Total average of the struct array
  */
 
 typedef struct {
@@ -63,8 +64,15 @@ int main() {
         }
     }
 
-    printf("\nThe Student with the max grande is: Student %d, ID = %d, Grade = %.2f", maxIndex + 1,
+    float totalSumOfGrande = 0;
+
+    for (int i = 0; i < howManyStudents; i++) {
+        totalSumOfGrande += students[i].grade;
+    }
+
+    printf("\nThe Student with the max grande is: Student %d, ID = %d, Grade = %.2f\n", maxIndex + 1,
            students[maxIndex].id, students[maxIndex].grade);
 
+    printf("The total average of the Students are: %.2f\n", totalSumOfGrande / (float)howManyStudents);
     return 0;
 }
