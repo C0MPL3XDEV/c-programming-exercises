@@ -78,19 +78,19 @@ int main() {
  * - if v is int*, then (v + 1) moves by sizeof(int) bytes
  * - so it points to the next integer in memory
  */
-int printArray(int *array, int arrayLength) {
+int printArray(int *vector, int vectorSize) {
 
     printf("Array printed with pointers: [");
 
     // Scan the array from index 0 to arrayLength - 1
-    for (int i = 0; i < arrayLength; i++) {
+    for (int i = 0; i < vectorSize; i++) {
 
         // Instead of using array[i], we use pointer arithmetic:
         // array[i]  <==>  *(array + i)
-        printf("%d", *(array + i));
+        printf("%d", *(vector + i));
 
         // Print comma between elements (but not after the last one)
-        if (i < arrayLength - 1) {
+        if (i < vectorSize - 1) {
             printf(", ");
         }
     }
