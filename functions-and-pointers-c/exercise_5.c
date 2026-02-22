@@ -22,6 +22,7 @@
 // - Receives a pointer to the first element of the array (int *vector)
 // - Receives the array size (vectorSize)
 int printArray(int *vector, int vectorSize);
+int fillArray(int *vector, int vectorSize);
 
 int main() {
 
@@ -34,13 +35,10 @@ int main() {
     // Declare an array with the given length (VLA - Variable Length Array)
     int vector[vectorLength];
 
-    // Initialize random generator
-    srand(time(NULL));
-
-    // Fill the array with random values
-    for (int i = 0; i < vectorLength; i++) {
-        vector[i] = rand() % 100;
-    }
+    // Call the function to fill the array.
+    // Here we pass 'vector', which represents the address of its first element:
+    //   vector == &vector[0]
+    fillArray(vector, vectorLength);
 
     // Call the function to print the array.
     // Here we pass 'vector', which represents the address of its first element:
@@ -101,5 +99,15 @@ int printArray(int *array, int arrayLength) {
 
     // Returning 0 here means "success", but for a printing function
     // it could also be declared as void (no return value needed).
+    return 0;
+}
+
+int fillArray(int *vector, int vectorSize) {
+    srand(time(NULL));
+
+    for (int i = 0; i < vectorSize; i++) {
+        *(vector + i) = rand() % 100;
+    }
+
     return 0;
 }
